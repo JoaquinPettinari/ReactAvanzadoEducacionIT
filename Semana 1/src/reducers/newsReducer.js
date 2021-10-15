@@ -1,5 +1,5 @@
 const initialState = {
-    articles: {},
+    articles: [],
     loading: false,
     error: false
 }
@@ -25,7 +25,16 @@ function newsReducer(state = initialState, action){
                 ...state,
                 loading: false,
                 error: true,
-            };           
+            };
+        case "DELETE_NEW":
+            const indexToDelete = action.payload.index;
+            const newList = state.articles.filter((news, index) => index !== indexToDelete)
+            return{
+                ...state,
+                articles: newList,
+                loading: false,
+                error: false
+            }
         default:
             return state
     }

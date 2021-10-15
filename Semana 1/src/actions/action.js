@@ -1,4 +1,4 @@
-import { FETCH_DATA_REQUEST ,FETCH_DATA_ERROR, FETCH_DATA_SUCCESS } from "./actionType"
+import { FETCH_DATA_REQUEST ,FETCH_DATA_ERROR, FETCH_DATA_SUCCESS, DELETE_NEW} from "./actionType"
 
 export function fetchDataRequest(){  
     return {
@@ -17,5 +17,12 @@ export function fetchDataError(error) {
     return {
       type: FETCH_DATA_ERROR,
       payload: { error }
+    };
+}
+
+export function deleteNews(index){
+    return {
+        type: DELETE_NEW,
+        payload: {index: index}
     };
 }
