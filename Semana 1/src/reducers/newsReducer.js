@@ -6,7 +6,7 @@ const initialState = {
 
 function newsReducer(state = initialState, action){    
     switch (action.type){
-        case "FETCH_DATA_FETCHING":
+        case "FETCH_DATA_REQUEST":
             return{
                 ...state,
                 loading: true,
